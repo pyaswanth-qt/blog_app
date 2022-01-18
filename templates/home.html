@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{%block title%}Welcome to iblogs{%endblock%}
+{%block content%}
+<div class="container mt20">
+  <div class="row">
+
+    <div class="col s12">
+
+      {%for p in posts%}
+
+      <div class="row">
+        <div class="col s12 m8">
+          <h4>{{p.title}}</h4>
+
+          {{p.content  |truncatewords:100| safe}}
+
+            <div class="mt20">
+            <a href="/blog/{{p.post_id}}" class="btn bg-primary">read more</a>
+            </div>
+
+        </div>
+
+        <div class="col s12 m4">
+
+          <img src="/media/{{p.image}}" class="responsive-img" alt="">
+        </div>
+
+
+      </div>
+       
+      {%endfor%}     
+
+    </div>
+    
+  </div> 
+</div>
+{%endblock%}

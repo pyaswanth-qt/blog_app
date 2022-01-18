@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block title%}Upload Blog {%endblock%}
+{%block content%}
+<div class="container">
+    <form method="post" action="/upload/">
+        {% csrf_token %}      
+
+        <div class="form-group">
+            <label for="title" class="form-label">Blog Title</label>
+            <input type="text" class="form-control" id="title" name ="title" placeholder="Title">
+        </div>
+
+
+         <div class="form-group">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" id="content"  name ="content" rows="10"></textarea>
+        </div>
+        <button class ="btn btn-primary" type="submit" class>submit</button>
+    </form>
+    
+</div>
+{% endblock %}
